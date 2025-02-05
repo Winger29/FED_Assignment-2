@@ -1,0 +1,29 @@
+body {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(75,14,154,1) 35%, rgba(0,212,255,1) 100%);
+    font-family: sans-serif,Arial, Helvetica;    
+}
+
+form {
+    width: 24%;
+    background-color: white;
+    padding: 50px;
+    border-radius: 20px;
+    margin-top: 150px;
+}
+
+img {
+    height: 75px;
+    width: 75px;
+}
+
+.form-control{
+    color:black;
+    border-bottom-color: black;
+    box-shadow: none !important;
+    border: none;
+    border-bottom: 1px solid;
+}
+
+.btn-primary {
+    width: 100%;
+}
