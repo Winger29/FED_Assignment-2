@@ -1,4 +1,4 @@
-body {
+.login-body {
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(75,14,154,1) 35%, rgba(0,212,255,1) 100%);
     font-family: sans-serif,Arial, Helvetica;  
 }
@@ -28,27 +28,15 @@ img {
     width: 100%;
 }
 
-.navbar{
-    background-color: rgba(255, 255, 255, 1);
-    width: auto;
-    height: 100px;
-    padding-top: 5px;
-    padding-bottom: 50px;
-}
-
-.navbar-brand {
-    padding-bottom: 25px;
-}
-
-.navbar-brand img {
-    width: 60px;
-    height: 60px;
-}
-
 .container{
     margin-top:80px;
 }
 
 .form-inline{
     max-width: 575px;
+}
+
+button img {
+    width: 50px;
+    height: 50px;
 }
