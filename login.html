@@ -16,35 +16,64 @@
     <body class="login-body">
       <div class="container-fluid">
         <div class="row vh-100 g-0">
-            <!-- Left Side (Image) -->
-            <div class="col-lg-6 d-none d-lg-block">
+            <!-- Left Side shows the image  -->
+            <div class="col-lg-6 position-relative d-none d-lg-block">
                 <div class="bg-image w-100 h-100"></div>
             </div>
     
-            <!-- Right Side (Login Form) -->
-            <div class="col-lg-6 d-flex align-items-center justify-content-center">
-                <form class="mx-auto p-4 bg-light rounded shadow" style="width: 350px;">
+            <!--k Right Side shows the login and registration form, which will be interchanged when pressing the respective buttons -->
+            <div class="col-lg-6">
+              <div class="row aligh-items-center justify-content-center h-100 g-0 px-4 px-sm-0">  
+                <div class="col-12 col-sm-6 col-lg-8 col-xl-8">            
+                    <form class="mx-auto p-4 bg-light rounded shadow w-100" id="loginform"> 
+                      <div class="mb-3">
+                          <button type="button" class="bg-white border-0"><a href="home.html"><img src="icons/arrow_blk.svg"></a></button>
+                      </div>
+                      <div class="mb-5 text-center">
+                          <img src="logos/Mokesell_logo.jpg" alt="Mokesell Logo" style="max-width: 150px;">
+                      </div>
+                      <div class="mb-3 mt-4">
+                          <label for="usernameinput" class="form-label">Username</label>
+                          <input type="email" class="form-control" id="usernameinput" placeholder="Enter Username">
+                      </div>
+                      <div class="mb-4">
+                          <label for="InputPassword1">Password</label>
+                          <input type="password" class="form-control" id="InputPassword1" placeholder="Enter Password">
+                          <div class="form-text text-center"><a href="forgotpass.html">Forgot Password?</a></div>
+                          <div class="form-text text-center">New to Mokesell? <a href="#" onclick="showRegisterForm()">Register here</a></div>
+                      </div>
+                      <button type="submit" class="btn btn-primary w-100">Login</button>
+                  </form>
+
+                  <form class="mx-auto p-4 bg-light rounded shadow w-100" id="registerForm">
                     <div class="mb-3">
-                        <button type="button" class="bg-white border-0"><a href="#"><img src="icons/arrow_blk.svg"></a></button>
+                        <button type="button" class="bg-white border-0"><a href="home.html"><img src="icons/arrow_blk.svg"></a></button>
                     </div>
-                    <div class="mb-3 text-center">
+                    <div class="mb-5 text-center">
                         <img src="logos/Mokesell_logo.jpg" alt="Mokesell Logo" style="max-width: 150px;">
                     </div>
                     <div class="mb-3 mt-4">
-                        <label for="usernameinput" class="form-label">Username</label>
-                        <input type="email" class="form-control" id="usernameinput" placeholder="Enter Username">
+                        <label for="registerUsername" class="form-label">Username</label>
+                        <input type="email" class="form-control" id="registerUsername" placeholder="Enter Username">
                     </div>
                     <div class="mb-4">
-                        <label for="InputPassword1">Password</label>
-                        <input type="password" class="form-control" id="InputPassword1" placeholder="Enter Password">
-                        <div class="form-text text-center"><a href="forgotpass.html">Forgot Password?</a></div>
-                        <div class="form-text text-center">New to Mokesell? <a href="newaccount.html">Register here</a></div>
+                        <label for="registerPassword">Password</label>
+                        <input type="password" class="form-control" id="registerPassword" placeholder="Enter Password">
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+                    <div class="mb-4">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Register</button>
+                    <div class="form-text text-center">Already have an account? <a href="#" onclick="showLoginForm()">Login here</a></div>
                 </form>
+                </div>
+              </div>
             </div>
         </div>
     </div>   
+        <script src="Javascript/form_switch.js" async defer></script>
+        <script src="Javascript/Login&Registration.js" async defer></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>
