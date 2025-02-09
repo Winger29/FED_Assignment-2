@@ -1,5 +1,6 @@
 .login-body {
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(75,14,154,1) 35%, rgba(0,212,255,1) 100%);
+    display: block;
+    background-color: white;
     font-family: sans-serif,Arial, Helvetica;  
 }
 
@@ -8,7 +9,7 @@ form {
     background-color: white;
     padding: 50px;
     border-radius: 25px;
-    margin-top: 100px;
+    margin-top: 90px;
 }
 
 img {
@@ -39,4 +40,11 @@ img {
 button img {
     width: 50px;
     height: 50px;
+}
+.bg-image {
+    background: url("logos/Mokesell_logo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
