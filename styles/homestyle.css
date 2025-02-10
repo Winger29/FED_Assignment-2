@@ -63,3 +63,24 @@ footer {
 .custom-card img {
     margin: auto;
 }
+
+#centered-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75% !important;  
+    height: 500px !important;
+}
+
+#loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

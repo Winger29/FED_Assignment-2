@@ -24,12 +24,3 @@ textarea {
     resize: none;
 }
 
-#centered-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 75% !important;  
-    height: 250px !important;
-}
-
-
