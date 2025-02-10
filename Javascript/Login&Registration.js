@@ -90,9 +90,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         try {
-            const isValid = await validateLogin(username, password);
-            if (isValid) {
+            const user = await validateLogin(username, password);
+            if (user) {
                 alert('Login successful!, you will be redirected to home page shortly');
+                localStorage.setItem('uid',user._id);
+                localStorage.setItem('username', user.Username);
+
+                console.log("Stored in localStorage: ", localStorage.getItem('uid'), localStorage.getItem('username'));
+
                 window.location.href = 'home.html';
             } else {
                 alert('Invalid username or password');
@@ -121,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
             
             const user = users.find(user => user.Username === username && user.Password === password);
 
-            return user ? true : false; 
+            return user || null; 
 
         } catch (error) {
             console.error('Error during API request:', error);
@@ -129,3 +134,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
