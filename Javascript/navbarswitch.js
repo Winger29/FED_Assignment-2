@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const userId = localStorage.getItem('uid');
-    const username = localStorage.getItem('username'); // Retrieve username from localStorage
+    const username = localStorage.getItem('username'); 
     const navbarPlaceholder = document.getElementById('navbarPlaceholder');
 
     if (userId) {
@@ -36,15 +36,15 @@ document.addEventListener('DOMContentLoaded', function () {
             </nav>
         `;
 
-        // Add onclick event for logout
+        // Added a onclick when the person logs out, also removes the username and uid as there is no need for it
         document.getElementById('logoutLink').onclick = function () {
             localStorage.removeItem('uid');
-            localStorage.removeItem('username'); // Remove username from localStorage
+            localStorage.removeItem('username'); 
             alert('You have been logged out.');
             window.location.href = 'login.html';
         };
     } else {
-        // Default navigation bar
+        // Default navigation bar when not logged in
         navbarPlaceholder.innerHTML = `
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container">
