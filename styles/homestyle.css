@@ -32,37 +32,6 @@ header p {
     font-size: 1.0rem;
 }
 
-.card {
-    border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-.card-title {
-    font-size: 1.rem;
-    margin-bottom: 1px;
-}
-
-.card-text {
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-}
-.custom-card {
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-}
-.custom-card img {
-    margin: auto;
-}
 
 #centered-image {
     display: block;
@@ -78,9 +47,172 @@ footer {
     top: 0;
     width: 100%;
     height: 100%;
-    z-index: 9999;
+    z-index: 10;
     background: white;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* this allows the item to be kept in the same line and also allow it to be scrollable to left and right*/
+#dailyItems {
+    display: flex;
+    flex-wrap: nowrap; 
+    gap: 10px;  
+    overflow-x: auto;  
+    scroll-snap-type: x mandatory;  
+    padding-bottom: 10px; 
+}
+
+
+.product-card {
+    flex: 0 0 auto;  
+    scroll-snap-align: start;  
+    max-width: 300px;
+}
+
+.card{
+    flex: 0 0 auto ;
+    width: 250px;
+}
+
+.product-card-link{
+    text-decoration: none;
+}
+
+/* Ensure the container is a scrollable row */
+.product-listing-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 15px; 
+    padding-bottom: 10px;
+}
+
+.product-listing-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+.product-card-link {
+    text-decoration: none;
+    color: inherit;
+    flex: 0 0 auto;
+    width: 250px; 
+}
+
+.product-card {
+    width: 100%;
+}
+
+/* Card styling */
+.card {
+    transition: transform 0.2s ease-in-out;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Image styling */
+.card-body img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.card-body h5 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card-body p {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+/* lottite css for the list creation */
+#successlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.success-content {
+    text-align: center;
+    color: white;
+}
+
+.success-message {
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#ElectronicItems {
+    display: flex;
+    flex-wrap: nowrap; 
+    gap: 10px;  
+    overflow-x: auto;  
+    scroll-snap-type: x mandatory;  
+    padding-bottom: 10px; 
+}
+
+
+
+/* styling for listing */
+body {
+    background-color: #f8f9fa;
+}
+
+#listingDetails {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#listingTitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+#listingDescription {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+#posterNameValue {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 10px;
+}
+
+#itemPrice,
+#itemCondition,
+#itemCategory {
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+#imageScrollContainer img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+footer {
+    margin-top: 30px;
+    background-color: #343a40;
 }

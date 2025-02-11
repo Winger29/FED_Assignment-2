@@ -7,7 +7,7 @@ document.querySelector("form").addEventListener("submit", async (event) => {
         return;
     }
 
-    // extract values from forms 
+    // Extract values from form
     const listingData = {
         "Listing Name": document.getElementById("listingName").value,
         "Description": document.getElementById("listingDescription").value,
@@ -21,13 +21,12 @@ document.querySelector("form").addEventListener("submit", async (event) => {
         "date creation": new Date().toISOString(),
     };
 
-    // function does to bring images to localstorage
+    // Upload images to localStorage
     const imageKeys = await uploadImagesToLocalStorage(files);
-
     listingData.imageKeys = imageKeys;
     console.log("Listing data with image keys:", listingData);
 
-    // Store the listing data with image keys in localStorage using a unique listingId
+    // Store listing data in localStorage
     const listingId = "listing_" + new Date().getTime(); 
     localStorage.setItem(listingId, JSON.stringify(listingData));
     console.log("Submitting listing:", listingData);
@@ -45,7 +44,14 @@ document.querySelector("form").addEventListener("submit", async (event) => {
         if (response.status === 201) {
             const result = await response.json();
             console.log("Listing Created Successfully:", result);
-            alert("Listing submitted successfully!");
+            
+            // Show the Lottie animation after listing creation
+            document.getElementById("successlist").style.display = 'block';
+            
+            setTimeout(() => {
+                document.getElementById("successlist").style.display = 'none';
+            }, 3000); 
+            
         } else {
             throw new Error(`Submission failed: ${response.status} ${response.statusText}`);
         }
@@ -64,11 +70,11 @@ async function uploadImagesToLocalStorage(files) {
             reader.onloadend = () => {
                 const base64Image = reader.result;
 
-                // stores the image in the local storage with an unique key, can also store multiple images
+                // Store the image in localStorage with a unique key
                 const imageKey = `listingImage_${Date.now()}_${index}`;
                 localStorage.setItem(imageKey, base64Image);
 
-                // pushes key to array
+                // Push key to array
                 imageKeys.push(imageKey);
                 resolve();
             };
