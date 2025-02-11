@@ -33,32 +33,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     async function registerUser(username, password) {
-        const apiUrl = 'https://cors-anywhere.herokuapp.com/https://fedassignment2-4024.restdb.io/rest/webuser'; 
-        const apiKey = 'a71926925440ffe9fad56d54b3257a1478eac'; 
-
-
-        const userData = {
-            "Username": username,  
-            "Password": password    
+        const apiUrl = 'https://cors-anywhere.herokuapp.com/https://fedassignment2-4024.restdb.io/rest/webuser';  
+       const userData = {
+            "Username": username,
+            "Password": password
         };
-
-        console.log("Sending user data to RESTdb:", userData);
-
-        // fetches url then sends the data to the database
+        
         try {
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'x-apikey': apiKey
+                    'x-apikey': 'a71926925440ffe9fad56d54b3257a1478eac'
                 },
-                body: JSON.stringify(userData) 
+                body: JSON.stringify(userData)
             });
-
+    
             const data = await response.json();
-
+    
             console.log('User registered:', data);
-
+    
             if (data._id) {
                 alert('Registration successful!');
                 showLoginForm();  
@@ -66,10 +60,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('An error occurred. Please try again.');
             }
         } catch (error) {
-            console.error('Error during API request:', error);
+            console.error('Error during registration:', error);
             alert('An error occurred. Please try again.');
         }
     }
+    
 
 });
 

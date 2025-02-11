@@ -14,31 +14,33 @@
     <!-- Listing Form -->
     <div class="container my-5">
         <h2 class="text-center mb-4">Create Listing</h2>
-        <form>
+        <form id="listingForm">
             <div class="mb-3">
                 <label for="listingName" class="form-label">Name</label>
-                <input type="text" class="form-control" id="listingName" required>
+                <input type="text" class="form-control" id="listingName" name="listingName" required>
             </div>
             <div class="mb-3">
                 <label for="listingDescription" class="form-label">Description</label>
-                <textarea class="form-control" id="listingDescription" rows="3" required></textarea>
+                <textarea class="form-control" id="listingDescription" name="listingDescription" rows="3" required></textarea>
             </div>
             <div class="mb-3">
                 <label for="listingCondition" class="form-label">Condition</label>
-                <select class="form-select" id="listingCondition" required>
+                <select class="form-select" id="listingCondition" name="listingCondition" required>
                     <option selected disabled value="">Choose...</option>
                     <option value="new">New</option>
-                    <option value="used">Used</option>
                     <option value="refurbished">Refurbished</option>
+                    <option value="Lightly-Used">Lightly-Used</option>
+                    <option value="Well-Used">Well-Used</option>
+                    <option value="Heavily-Used">Heavily-Used</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label for="listingPrice" class="form-label">Price</label>
-                <input type="number" class="form-control" id="listingPrice" required>
+                <input type="number" class="form-control" id="listingPrice" name="listingPrice" required>
             </div>
             <div class="mb-3">
                 <label for="listingCategory" class="form-label">Category</label>
-                <select class="form-select" id="listingCategory" required>
+                <select class="form-select" id="listingCategory" name="listingCategory" required>
                     <option selected disabled value="">Choose...</option>
                     <option value="electronics">Electronics</option>
                     <option value="daily">Daily</option>
@@ -48,9 +50,10 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label for="formFileMultiple" class="form-label">Multiple files input example</label>
-                <input class="form-control" type="file" id="formFileMultiple" multiple>
-              </div>              
+                <label for="listingImages" class="form-label">Upload Images</label>
+                <input type="file" class="form-control" id="listingImages" name="listingImages" multiple required>
+            </div>
+            
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
@@ -60,7 +63,7 @@
             <p>&copy; 2025 MokeSell. All rights reserved.</p>
         </div>
     </footer>
-
+    <script src="/Javascript/createslisting.js" defer></script> 
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     <script src="Javascript/navbarswitch.js" defer></script>
     <script src="Javascript/logout.js" defer></script>
